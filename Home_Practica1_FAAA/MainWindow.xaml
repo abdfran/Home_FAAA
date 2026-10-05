@@ -1,0 +1,60 @@
+﻿<Window x:Class="Home_Practica1_FAAA.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Home_Practica1_FAAA"
+        mc:Ignorable="d"
+        Title="Portal de Videojuegos - Home" Height="450" Width="800"
+        Background="#1E2328">
+    <!-- Fondo estilo Battle.net -->
+
+    <Grid>
+        <!-- CABECERA SUPERIOR -->
+        <Label x:Name="lb1" Content="Mi perfil" HorizontalAlignment="Right" Margin="0,16,20,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#00A4E4" Cursor="Hand"/>
+        <TextBlock HorizontalAlignment="Left" Margin="357,34,0,0" TextWrapping="Wrap" Text="TIENDA" VerticalAlignment="Top" FontWeight="Bold" Foreground="White" Cursor="Hand"/>
+        <TextBlock HorizontalAlignment="Left" Margin="486,37,0,0" TextWrapping="Wrap" Text="COMUNIDAD" VerticalAlignment="Top" FontWeight="Bold" Foreground="#8A929A" Cursor="Hand"/>
+        <TextBlock HorizontalAlignment="Left" Margin="628,37,0,0" TextWrapping="Wrap" Text="SOPORTE" VerticalAlignment="Top" FontWeight="Bold" Foreground="#8A929A" Cursor="Hand"/>
+
+        <!-- SECCIÓN MENÚ LATERAL IZQUIERDO -->
+        <Border BorderBrush="#00A4E4" BorderThickness="1.5" Margin="48,110,518,27" CornerRadius="10" Background="#15181C">
+            <StackPanel Margin="15" VerticalAlignment="Center">
+                <Button x:Name="Destacados1" Margin="0,10" Padding="5" Background="#00A4E4" Foreground="White" FontWeight="Bold" BorderThickness="0">
+                    <TextBlock Text="Destacados"/>
+                </Button>
+                <Button x:Name="Mis_juegos1" Margin="0,10" Padding="5" Background="#2A2F3A" Foreground="#D0D4D9" BorderThickness="0">
+                    <TextBlock Text="Mis juegos"/>
+                </Button>
+                <Button x:Name="Configuración2" Margin="0,10" Padding="5" Background="#2A2F3A" Foreground="#D0D4D9" BorderThickness="0">
+                    <TextBlock x:Name="Configuración3" Text="Configuración"/>
+                </Button>
+            </StackPanel>
+        </Border>
+
+        <!-- SECCIÓN PRINCIPAL DE JUEGOS DERECHA -->
+        <Border BorderBrush="#3A3F48" BorderThickness="1" Margin="335,89,47,71" CornerRadius="5" Background="#15181C">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10">
+                <Button x:Name="JG4" Width="100" Height="100" Margin="10" Background="#252A30" BorderBrush="#00A4E4" BorderThickness="1">
+                    <Grid>
+                        <Image Source="Imagenes/wow_boa.webp" Stretch="UniformToFill" Height="96" VerticalAlignment="Top"/>
+
+                        <!-- Nombre del juego en la parte inferior sobre un fondo semitransparente -->
+                        <TextBlock Text="WoW" 
+                                   Foreground="White" 
+                                   FontWeight="Bold" 
+                                   VerticalAlignment="Bottom" 
+                                   HorizontalAlignment="Center" 
+                                   Background="#CC000000" 
+                                   Padding="2"/>
+                    </Grid>
+                </Button>
+                <Button x:Name="JG5" Width="100" Height="100" Margin="10" Background="#252A30" BorderBrush="#3A3F48" BorderThickness="1">
+                    <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Juego bz2" Foreground="White" FontWeight="Bold"/>
+                </Button>
+                <Button x:Name="JG6" Width="100" Height="100" Margin="10" Background="#252A30" BorderBrush="#3A3F48" BorderThickness="1">
+                    <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Juego bz3" Foreground="White" FontWeight="Bold"/>
+                </Button>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
