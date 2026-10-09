@@ -1,0 +1,75 @@
+﻿<Window x:Class="Home_Practica1_FAAA.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Inicio de Sesión - Portal de Videojuegos" 
+        Height="400" Width="450"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Background="#1E2328">
+
+    <Grid Margin="20">
+        <Border BorderBrush="#00A4E4" BorderThickness="1.5" CornerRadius="8" Background="#15181C" Padding="25">
+            <StackPanel VerticalAlignment="Center">
+
+                <!-- Título -->
+                <TextBlock Text="INICIAR SESIÓN" 
+                           Foreground="#00A4E4" 
+                           FontSize="20" 
+                           FontWeight="Bold" 
+                           HorizontalAlignment="Center" 
+                           Margin="0,0,0,20"/>
+
+                <!-- Campo Usuario -->
+                <TextBlock Text="Usuario:" Foreground="#D0D4D9" FontWeight="SemiBold" Margin="0,5,0,2"/>
+                <TextBox x:Name="txtUsuario" 
+                         Height="30" 
+                         Background="#252A30" 
+                         Foreground="White" 
+                         BorderBrush="#3A3F48" 
+                         VerticalContentAlignment="Center" 
+                         Padding="5,0"/>
+
+                <!-- Campo Contraseña (Oculta caracteres) -->
+                <TextBlock Text="Contraseña:" Foreground="#D0D4D9" FontWeight="SemiBold" Margin="0,10,0,2"/>
+                <PasswordBox x:Name="txtPassword" 
+                             Height="30" 
+                             Background="#252A30" 
+                             Foreground="White" 
+                             BorderBrush="#3A3F48" 
+                             VerticalContentAlignment="Center" 
+                             Padding="5,0"/>
+
+                <!-- Mensaje Dinámico de Estado -->
+                <TextBlock x:Name="lblMensaje" 
+                           Text="" 
+                           Foreground="#FF5555" 
+                           FontWeight="Bold" 
+                           HorizontalAlignment="Center" 
+                           Margin="0,15,0,0" 
+                           TextWrapping="Wrap"/>
+
+                <!-- Botones de Acción -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
+                    <Button x:Name="btnLogin" 
+                            Content="Iniciar Sesión" 
+                            Width="120" 
+                            Height="32" 
+                            Background="#00A4E4" 
+                            Foreground="White" 
+                            FontWeight="Bold" 
+                            Margin="0,0,10,0" 
+                            Click="btnLogin_Click"/>
+
+                    <Button x:Name="btnSalir" 
+                            Content="Salir" 
+                            Width="90" 
+                            Height="32" 
+                            Background="#2A2F3A" 
+                            Foreground="#D0D4D9" 
+                            FontWeight="Bold" 
+                            Click="btnSalir_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

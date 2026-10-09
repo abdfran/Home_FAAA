@@ -6,12 +6,16 @@
         xmlns:local="clr-namespace:Home_Practica1_FAAA"
         mc:Ignorable="d"
         Title="Portal de Videojuegos - Home" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen"
         Background="#1E2328">
-    <!-- Fondo estilo Battle.net -->
 
     <Grid>
         <!-- CABECERA SUPERIOR -->
-        <Label x:Name="lb1" Content="Mi perfil" HorizontalAlignment="Right" Margin="0,16,20,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#00A4E4" Cursor="Hand"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,12,20,0">
+            <TextBlock x:Name="txtBienvenida" Text="Bienvenido, Usuario" Foreground="#00A4E4" FontWeight="Bold" VerticalAlignment="Center" Margin="0,0,15,0"/>
+            <Button x:Name="btnCerrarSesion" Content="Cerrar Sesión" Background="#2A2F3A" Foreground="#D0D4D9" Padding="8,4" FontWeight="Bold" BorderThickness="0" Click="btnCerrarSesion_Click" Cursor="Hand"/>
+        </StackPanel>
+
         <TextBlock HorizontalAlignment="Left" Margin="357,34,0,0" TextWrapping="Wrap" Text="TIENDA" VerticalAlignment="Top" FontWeight="Bold" Foreground="White" Cursor="Hand"/>
         <TextBlock HorizontalAlignment="Left" Margin="486,37,0,0" TextWrapping="Wrap" Text="COMUNIDAD" VerticalAlignment="Top" FontWeight="Bold" Foreground="#8A929A" Cursor="Hand"/>
         <TextBlock HorizontalAlignment="Left" Margin="628,37,0,0" TextWrapping="Wrap" Text="SOPORTE" VerticalAlignment="Top" FontWeight="Bold" Foreground="#8A929A" Cursor="Hand"/>
@@ -37,8 +41,6 @@
                 <Button x:Name="JG4" Width="100" Height="100" Margin="10" Background="#252A30" BorderBrush="#00A4E4" BorderThickness="1">
                     <Grid>
                         <Image Source="Imagenes/wow_boa.webp" Stretch="UniformToFill" Height="96" VerticalAlignment="Top"/>
-
-                        <!-- Nombre del juego en la parte inferior sobre un fondo semitransparente -->
                         <TextBlock Text="WoW" 
                                    Foreground="White" 
                                    FontWeight="Bold" 
