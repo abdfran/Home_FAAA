@@ -29,7 +29,7 @@
                          VerticalContentAlignment="Center" 
                          Padding="5,0"/>
 
-                <!-- Campo Contraseña (Oculta caracteres) -->
+                <!-- Campo Contraseña -->
                 <TextBlock Text="Contraseña:" Foreground="#D0D4D9" FontWeight="SemiBold" Margin="0,10,0,2"/>
                 <PasswordBox x:Name="txtPassword" 
                              Height="30" 
@@ -39,30 +39,33 @@
                              VerticalContentAlignment="Center" 
                              Padding="5,0"/>
 
-                <!-- Mensaje Dinámico de Estado -->
-                <TextBlock x:Name="lblMensaje" 
-                           Text="" 
-                           Foreground="#FF5555" 
-                           FontWeight="Bold" 
-                           HorizontalAlignment="Center" 
-                           Margin="0,15,0,0" 
-                           TextWrapping="Wrap"/>
-
                 <!-- Botones de Acción -->
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,25,0,0">
                     <Button x:Name="btnLogin" 
                             Content="Iniciar Sesión" 
-                            Width="120" 
+                            Width="115" 
                             Height="32" 
                             Background="#00A4E4" 
                             Foreground="White" 
                             FontWeight="Bold" 
-                            Margin="0,0,10,0" 
+                            Margin="0,0,8,0" 
                             Click="btnLogin_Click"/>
+
+                    <Button x:Name="btnNuevoUsuario" 
+                            Content="Nuevo Usuario" 
+                            Width="115" 
+                            Height="32" 
+                            Background="#252A30" 
+                            BorderBrush="#00A4E4"
+                            BorderThickness="1"
+                            Foreground="#00A4E4" 
+                            FontWeight="Bold" 
+                            Margin="0,0,8,0" 
+                            Click="btnNuevoUsuario_Click"/>
 
                     <Button x:Name="btnSalir" 
                             Content="Salir" 
-                            Width="90" 
+                            Width="80" 
                             Height="32" 
                             Background="#2A2F3A" 
                             Foreground="#D0D4D9" 

@@ -6,57 +6,74 @@
         xmlns:local="clr-namespace:Home_Practica1_FAAA"
         mc:Ignorable="d"
         Title="Portal de Videojuegos - Home" Height="450" Width="800"
+        MinHeight="420" MinWidth="750"
         WindowStartupLocation="CenterScreen"
         Background="#1E2328">
 
-    <Grid>
-        <!-- CABECERA SUPERIOR -->
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,12,20,0">
-            <TextBlock x:Name="txtBienvenida" Text="Bienvenido, Usuario" Foreground="#00A4E4" FontWeight="Bold" VerticalAlignment="Center" Margin="0,0,15,0"/>
-            <Button x:Name="btnCerrarSesion" Content="Cerrar Sesión" Background="#2A2F3A" Foreground="#D0D4D9" Padding="8,4" FontWeight="Bold" BorderThickness="0" Click="btnCerrarSesion_Click" Cursor="Hand"/>
-        </StackPanel>
+    <Grid Margin="20">
+        <!-- Definición de filas y columnas para evitar que se solapen -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="230"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
-        <TextBlock HorizontalAlignment="Left" Margin="357,34,0,0" TextWrapping="Wrap" Text="TIENDA" VerticalAlignment="Top" FontWeight="Bold" Foreground="White" Cursor="Hand"/>
-        <TextBlock HorizontalAlignment="Left" Margin="486,37,0,0" TextWrapping="Wrap" Text="COMUNIDAD" VerticalAlignment="Top" FontWeight="Bold" Foreground="#8A929A" Cursor="Hand"/>
-        <TextBlock HorizontalAlignment="Left" Margin="628,37,0,0" TextWrapping="Wrap" Text="SOPORTE" VerticalAlignment="Top" FontWeight="Bold" Foreground="#8A929A" Cursor="Hand"/>
+        <!-- CABECERA SUPERIOR (Fila 0, ocupa las 2 columnas) -->
+        <Grid Grid.Row="0" Grid.ColumnSpan="2" Margin="0,0,0,20">
+            <!-- Navegación superior -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="TIENDA" Margin="15,0" FontWeight="Bold" Foreground="White" Cursor="Hand"/>
+                <TextBlock Text="COMUNIDAD" Margin="15,0" FontWeight="Bold" Foreground="#8A929A" Cursor="Hand"/>
+                <TextBlock Text="SOPORTE" Margin="15,0" FontWeight="Bold" Foreground="#8A929A" Cursor="Hand"/>
+            </StackPanel>
 
-        <!-- SECCIÓN MENÚ LATERAL IZQUIERDO -->
-        <Border BorderBrush="#00A4E4" BorderThickness="1.5" Margin="48,110,518,27" CornerRadius="10" Background="#15181C">
+            <!-- Usuario y Cerrar Sesión -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <TextBlock x:Name="txtBienvenida" Text="Bienvenido, Usuario" Foreground="#00A4E4" FontWeight="Bold" VerticalAlignment="Center" Margin="0,0,15,0"/>
+                <Button x:Name="btnCerrarSesion" Content="Cerrar Sesión" Background="#2A2F3A" Foreground="#D0D4D9" Padding="10,5" FontWeight="Bold" BorderThickness="0" Click="btnCerrarSesion_Click" Cursor="Hand"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- SECCIÓN MENÚ LATERAL IZQUIERDO (Fila 1, Columna 0 - Ancho fijo de 230px) -->
+        <Border Grid.Row="1" Grid.Column="0" BorderBrush="#00A4E4" BorderThickness="1.5" Margin="0,0,15,10" CornerRadius="10" Background="#15181C">
             <StackPanel Margin="15" VerticalAlignment="Center">
-                <Button x:Name="Destacados1" Margin="0,10" Padding="5" Background="#00A4E4" Foreground="White" FontWeight="Bold" BorderThickness="0">
+                <Button x:Name="Destacados1" Margin="0,10" Padding="8" Background="#00A4E4" Foreground="White" FontWeight="Bold" BorderThickness="0" Cursor="Hand">
                     <TextBlock Text="Destacados"/>
                 </Button>
-                <Button x:Name="Mis_juegos1" Margin="0,10" Padding="5" Background="#2A2F3A" Foreground="#D0D4D9" BorderThickness="0">
+                <Button x:Name="Mis_juegos1" Margin="0,10" Padding="8" Background="#2A2F3A" Foreground="#D0D4D9" BorderThickness="0" Cursor="Hand">
                     <TextBlock Text="Mis juegos"/>
                 </Button>
-                <Button x:Name="Configuración2" Margin="0,10" Padding="5" Background="#2A2F3A" Foreground="#D0D4D9" BorderThickness="0">
+                <Button x:Name="Configuración2" Margin="0,10" Padding="8" Background="#2A2F3A" Foreground="#D0D4D9" BorderThickness="0" Cursor="Hand">
                     <TextBlock x:Name="Configuración3" Text="Configuración"/>
                 </Button>
             </StackPanel>
         </Border>
 
-        <!-- SECCIÓN PRINCIPAL DE JUEGOS DERECHA -->
-        <Border BorderBrush="#3A3F48" BorderThickness="1" Margin="335,89,47,71" CornerRadius="5" Background="#15181C">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10">
-                <Button x:Name="JG4" Width="100" Height="100" Margin="10" Background="#252A30" BorderBrush="#00A4E4" BorderThickness="1">
+        <!-- SECCIÓN PRINCIPAL DE JUEGOS DERECHA (Fila 1, Columna 1 - Ocupa el resto del espacio) -->
+        <Border Grid.Row="1" Grid.Column="1" BorderBrush="#3A3F48" BorderThickness="1" Margin="5,0,0,10" CornerRadius="5" Background="#15181C">
+            <WrapPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15">
+                <Button x:Name="JG4" Width="110" Height="110" Margin="10" Background="#252A30" BorderBrush="#00A4E4" BorderThickness="1" Cursor="Hand">
                     <Grid>
-                        <Image Source="Imagenes/wow_boa.webp" Stretch="UniformToFill" Height="96" VerticalAlignment="Top"/>
+                        <Image Source="Imagenes/wow_boa.webp" Stretch="UniformToFill" Height="106" VerticalAlignment="Top"/>
                         <TextBlock Text="WoW" 
                                    Foreground="White" 
                                    FontWeight="Bold" 
                                    VerticalAlignment="Bottom" 
                                    HorizontalAlignment="Center" 
                                    Background="#CC000000" 
-                                   Padding="2"/>
+                                   Padding="4,2"/>
                     </Grid>
                 </Button>
-                <Button x:Name="JG5" Width="100" Height="100" Margin="10" Background="#252A30" BorderBrush="#3A3F48" BorderThickness="1">
+                <Button x:Name="JG5" Width="110" Height="110" Margin="10" Background="#252A30" BorderBrush="#3A3F48" BorderThickness="1" Cursor="Hand">
                     <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Juego bz2" Foreground="White" FontWeight="Bold"/>
                 </Button>
-                <Button x:Name="JG6" Width="100" Height="100" Margin="10" Background="#252A30" BorderBrush="#3A3F48" BorderThickness="1">
+                <Button x:Name="JG6" Width="110" Height="110" Margin="10" Background="#252A30" BorderBrush="#3A3F48" BorderThickness="1" Cursor="Hand">
                     <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Juego bz3" Foreground="White" FontWeight="Bold"/>
                 </Button>
-            </StackPanel>
+            </WrapPanel>
         </Border>
     </Grid>
 </Window>
